@@ -4,8 +4,8 @@ build:
   ldflags:
     - >
       -s -w 
-      -X github.com/tonobo/mtr/cli.version={{.Version}} 
-      -X github.com/tonobo/mtr/cli.date={{.Date}} 
+      -X github.com/abdulmeLINK/mtr/cli.version={{.Version}} 
+      -X github.com/abdulmeLINK/mtr/cli.date={{.Date}}
   goos:
     - linux
   env:
@@ -22,7 +22,7 @@ checksum:
 
 nfpm:
   vendor: Task
-  homepage: https://github.com/tonobo/mtr
+  homepage: https://github.com/abdulmeLINK/mtr
   maintainer: Tim Foerster <gh-mtr@moo.gl>
   description: Golang native MTR
   license: MIT
@@ -32,4 +32,3 @@ nfpm:
     - deb
     - rpm
   name_template: "{{.ProjectName}}_{{.Os}}_{{.Arch}}"
-

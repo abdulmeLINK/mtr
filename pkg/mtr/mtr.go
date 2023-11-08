@@ -9,9 +9,8 @@ import (
 	"sync"
 	"time"
 
-	gm "github.com/buger/goterm"
-	"github.com/tonobo/mtr/pkg/hop"
-	"github.com/tonobo/mtr/pkg/icmp"
+	"github.com/abdulmeLINK/mtr/pkg/hop"
+	"github.com/abdulmeLINK/mtr/pkg/icmp"
 )
 
 type MTR struct {
@@ -127,19 +126,6 @@ func addTarget(currentTargets []string, toAdd string) []string {
 
 	// add the new one
 	return append(newTargets, toAdd)
-}
-
-// TODO: aggregates everything using the first target even when there are multiple
-func (m *MTR) Render(offset int) {
-	gm.MoveCursor(1, offset)
-	l := fmt.Sprintf("%d", m.ringBufferSize)
-	gm.Printf("HOP:    %-20s  %5s%%  %4s  %6s  %6s  %6s  %6s  %"+l+"s\n", "Address", "Loss", "Sent", "Last", "Avg", "Best", "Worst", "Packets")
-	for i := 1; i <= len(m.Statistic); i++ {
-		gm.MoveCursor(1, offset+i)
-		m.mutex.RLock()
-		m.Statistic[i].Render(m.ptrLookup)
-		m.mutex.RUnlock()
-	}
 }
 
 func (m *MTR) Run(ch chan struct{}, count int) {

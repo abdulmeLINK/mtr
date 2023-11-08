@@ -1,11 +1,11 @@
 # MTR
-[![Build Status](https://travis-ci.org/tonobo/mtr.svg?branch=master)](https://travis-ci.org/tonobo/mtr)
+[![Build Status](https://travis-ci.org/abdulmeLINK/mtr.svg?branch=master)](https://travis-ci.org/abdulmeLINK/mtr)
 
 A MTR implementation written in golang, completely without shell-execs.
 
 Just install with the following command:
 ```
-go get -u github.com/tonobo/mtr
+go get -u github.com/abdulmeLINK/mtr
 sudo setcap cap_net_raw+ep PATH-TO-GOMTR
 ```
 or a precompiled version
